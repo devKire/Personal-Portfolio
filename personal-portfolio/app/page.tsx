@@ -1,21 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./components/ui/card";
+
 import { Input } from "./components/ui/input";
 import { Textarea } from "./components/ui/textarea";
 import ProjectSpecs from "./components/ProjectSpecs";
 
-import { FaReact, FaDatabase, FaGithub, FaDiscord } from "react-icons/fa"; // React
-import { SiFirebase, SiStripe } from "react-icons/si"; // Firebase, Stripe
-import { IoLogoJavascript } from "react-icons/io"; // JavaScript
-import { DiBootstrap, DiCss3 } from "react-icons/di";
 import SkillsSection from "./components/Skillssection";
 
 export default function Page() {

@@ -1,10 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
 
-import { FaReact, FaDatabase, FaGithub, FaDiscord } from "react-icons/fa"; // React
-import { SiFirebase, SiStripe } from "react-icons/si"; // Firebase, Stripe
-import { IoLogoJavascript } from "react-icons/io"; // JavaScript
-import { DiBootstrap, DiCss3 } from "react-icons/di";
 import {
   Card,
   CardContent,
