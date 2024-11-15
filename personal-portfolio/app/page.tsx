@@ -13,12 +13,6 @@ export default function Page() {
     <div className="bg-gray-900 text-white min-h-screen">
       <header className="flex flex-col items-center text-center py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 w-full">
         <div className="max-w-2xl mx-auto">
-          {/* Quote Section */}
-          <div className="mb-6">
-            <p className="text-xl italic">"Became your dream in reality."</p>
-            <span className="block text-sm text-gray-300">- Kire</span>
-          </div>
-
           {/* Intro Section */}
           <div className="space-y-4">
             <h1 className="text-4xl font-bold">OLÁ,👋 EU SOU O ERIK</h1>
