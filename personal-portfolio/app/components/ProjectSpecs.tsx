@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   Card,
@@ -8,13 +9,17 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Button } from "./ui/button";
+import { redirect } from "next/dist/server/api-utils";
 
 export default function ProjectSpecs() {
   const projects = [
     {
       title: "LowAnx Project",
       imgSrc: "/lowanx.png",
-      description: "A sample project.",
+      description:
+        "O LowAnx é uma iniciativa dedicada a fornecer apoio e informações valiosas para aqueles que enfrentam desafios relacionados à ansiedade.",
+      temp: "Projeto Recente",
+      link: "https://lowanx.com.br",
       specs: [
         { label: "Language", value: "TypeScript", icon: "/TypeScript.svg" },
         { label: "Library", value: "React", icon: "/React.svg " },
@@ -26,7 +31,10 @@ export default function ProjectSpecs() {
     {
       title: "L'Amour Games Project",
       imgSrc: "/lamour.png",
-      description: "Another project.",
+      description:
+        "A LAMOUR Games nasceu com o objetivo de unir gamers de todas as plataformas em uma única comunidade. Nosso foco é promover diversão, interação e oportunidades para que jogadores possam se conectar, compartilhar experiências e evoluir juntos. Seja você um jogador casual ou um profissional, nosso espaço é para todos que amam jogos!",
+      temp: "Projeto Recente",
+      link: "https://lamour-games.vercel.app",
       specs: [
         { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
         { label: "Library", value: "React", icon: "/React.svg" },
@@ -36,6 +44,43 @@ export default function ProjectSpecs() {
           icon: "/Discord.svg",
         },
         { label: "Backend", value: "Firebase", icon: "/Firebase.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+      ],
+    },
+    {
+      title: "Pagina de Vendas",
+      imgSrc: "/dog.png",
+      description: "Pagina",
+      temp: "Projeto Recente",
+      link: "https://amantesdedogs.vercel.app",
+      specs: [
+        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
+        { label: "Library", value: "React", icon: "/React.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+      ],
+    },
+    {
+      title: "Kire Visual Designers",
+      imgSrc: "/designers.png",
+      description: "Projeto inicial de um site de designers",
+      temp: "Projeto Antigo",
+      link: "https://kvd-kire-visual-designers.vercel.app",
+      specs: [
+        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
+        { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+      ],
+    },
+    {
+      title: "Portifolio",
+      imgSrc: "/portfolio.png",
+      description:
+        "A LAMOUR Games nasceu com o objetivo de unir gamers de todas as plataformas em uma única comunidade. Nosso foco é promover diversão, interação e oportunidades para que jogadores possam se conectar, compartilhar experiências e evoluir juntos. Seja você um jogador casual ou um profissional, nosso espaço é para todos que amam jogos!",
+      temp: "Projeto Antigo",
+      link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
+      specs: [
+        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
+        { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
         { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
       ],
     },
@@ -54,6 +99,7 @@ export default function ProjectSpecs() {
               <CardTitle className="text-2xl font-bold text-gray-900">
                 {project.title}
               </CardTitle>
+              <p className="text-gray-600 mt-2">{project.temp}</p>
               <Image
                 src={project.imgSrc}
                 alt={project.title}
@@ -91,13 +137,15 @@ export default function ProjectSpecs() {
             </CardContent>
 
             <CardFooter className="flex justify-end mt-4">
-              <Button
-                variant="outline"
-                className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-lg"
-                title="View Project"
-              >
-                View Project
-              </Button>
+              <Link href={project.link} passHref>
+                <Button
+                  variant="outline"
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-lg"
+                  title="View Project"
+                >
+                  Veja o projeto
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}

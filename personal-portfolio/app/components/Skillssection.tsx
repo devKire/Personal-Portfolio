@@ -24,6 +24,7 @@ const SkillsSection: FC = () => {
       { name: "JavaScript", icon: "/JavaScript.svg" },
       { name: "TypeScript", icon: "/TypeScript.svg" },
       { name: "C#", icon: "/csharp.svg" },
+      { name: "Python", icon: "/python.svg" },
     ],
     frameworks: [
       { name: "React", icon: "/react.svg" },
@@ -72,15 +73,15 @@ const SkillsSection: FC = () => {
         Habilidades Técnicas
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {Object.keys(skills).map((key) => (
-          <Card key={key}>
+          <Card key={key} className="bg-white border border-gray-200 shadow-lg">
             <CardHeader>
               <CardTitle className="text-xl font-semibold">
                 {key.replace(/([A-Z])/g, " $1")}
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="mt-4 space-y-2">
               {skills[key as keyof Skills].map((skill, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
