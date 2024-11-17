@@ -29,14 +29,16 @@ export default function ProjectSpecs() {
     },
     {
       title: "Portifolio V2",
-      imgSrc: "/portfolio.png",
-      description: "Primeira versão do portifolio",
-      temp: "Projeto Antigo",
+      imgSrc: "/portfoliov2.png",
+      description: "Ultima versão do portifolio",
+      temp: "Projeto Recente",
       link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
-        { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
-        { label: "Styling", value: "Custom CSS", icon: "/css3.svg" },
+        { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
+        { label: "Library", value: "React", icon: "/react.svg" },
+        { label: "Framework", value: "NextJS", icon: "/next.js.svg" },
+        { label: "Framework", value: "ShadCN", icon: "/shadcn.svg" },
+        { label: "Styling", value: "TailwindCSS", icon: "/tailwindcss.svg" },
       ],
     },
     {

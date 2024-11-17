@@ -8,7 +8,7 @@ import SkillsSection from "./components/Skillssection";
 
 export default function Page() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className=" text-white min-h-screen">
       <header className="flex flex-col items-center text-center py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 w-full text-white">
         <div className="max-w-3xl mx-auto">
           {/* Intro Section */}
@@ -20,13 +20,14 @@ export default function Page() {
               DESENVOLVEDOR FULLSTACK
             </p>
             <p className="text-lg leading-relaxed">
-              Entusiasta da{" "}
+              Sou apaixonado por{" "}
               <span className="font-bold text-purple-300">tecnologia</span>,
-              apaixonado por{" "}
-              <span className="font-bold text-purple-300">educação</span>, e
-              dedicado a transformar vidas através da{" "}
+              acredito no poder da{" "}
+              <span className="font-bold text-purple-300">educação</span> e me
+              dedico a ajudar vidas por meio da{" "}
               <span className="font-bold text-purple-300">programação</span>. A
-              cada linha de código, busco inovar e criar experiências únicas.
+              cada linha de código, busco trazer inovação e criar experiências
+              únicas.
             </p>
           </div>
 
@@ -96,7 +97,7 @@ export default function Page() {
       </header>
 
       {/* About Section */}
-      <section className="py-16 px-4 text-center">
+      <section className="py-16 px-4 text-center bg-blur-sm bg-black bg-opacity-75">
         <h2 className="text-3xl font-semibold mb-4">Sobre Mim</h2>
         <p className="max-w-xl mx-auto">
           Com experiência em infra e ao longo dos meus estudos e projetos
