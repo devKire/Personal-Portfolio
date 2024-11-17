@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Button } from "./ui/button";
-import { redirect } from "next/dist/server/api-utils";
 
 export default function ProjectSpecs() {
   const projects = [
@@ -29,6 +28,18 @@ export default function ProjectSpecs() {
       ],
     },
     {
+      title: "Portifolio V2",
+      imgSrc: "/portfolio.png",
+      description: "Primeira versão do portifolio",
+      temp: "Projeto Antigo",
+      link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
+      specs: [
+        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
+        { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+      ],
+    },
+    {
       title: "L'Amour Games Project",
       imgSrc: "/lamour.png",
       description:
@@ -36,7 +47,7 @@ export default function ProjectSpecs() {
       temp: "Projeto Recente",
       link: "https://lamour-games.vercel.app",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
+        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
         { label: "Library", value: "React", icon: "/React.svg" },
         {
           label: "Authentication",
@@ -50,11 +61,12 @@ export default function ProjectSpecs() {
     {
       title: "Pagina de Vendas",
       imgSrc: "/dog.png",
-      description: "Pagina",
+      description:
+        "Pagina de vendas de um e-book de receitas saudáveis para pets.",
       temp: "Projeto Recente",
       link: "https://amantesdedogs.vercel.app",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
+        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
         { label: "Library", value: "React", icon: "/React.svg" },
         { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
       ],
@@ -66,20 +78,19 @@ export default function ProjectSpecs() {
       temp: "Projeto Antigo",
       link: "https://kvd-kire-visual-designers.vercel.app",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
-        { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
+        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
+        { label: "Markup Language", value: "HTML5", icon: "/HTML5.svg" },
         { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
       ],
     },
     {
-      title: "Portifolio",
+      title: "Portifolio V1",
       imgSrc: "/portfolio.png",
-      description:
-        "A LAMOUR Games nasceu com o objetivo de unir gamers de todas as plataformas em uma única comunidade. Nosso foco é promover diversão, interação e oportunidades para que jogadores possam se conectar, compartilhar experiências e evoluir juntos. Seja você um jogador casual ou um profissional, nosso espaço é para todos que amam jogos!",
+      description: "Primeira versão do portifolio",
       temp: "Projeto Antigo",
       link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/Javascript.svg" },
+        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
         { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
         { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
       ],
@@ -87,63 +98,68 @@ export default function ProjectSpecs() {
   ];
 
   return (
-    <section id="projects" className="py-16 px-4 bg-gray-800">
-      <h2 className="text-3xl font-semibold text-center mb-8">Meus Projetos</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-16 px-4 bg-gray-900">
+      <h2 className="text-3xl font-bold text-center text-white mb-12">
+        Meus Projetos
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <Card
-            className="bg-white border border-gray-200 shadow-lg"
             key={index}
+            className="bg-white border border-gray-200 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
           >
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-gray-900">
-                {project.title}
-              </CardTitle>
-              <p className="text-gray-600 mt-2">{project.temp}</p>
               <Image
                 src={project.imgSrc}
-                alt={project.title}
+                alt={`Imagem do projeto ${project.title}`}
                 width={400}
                 height={300}
-                className="rounded-lg mb-4"
+                className="rounded-t-lg"
               />
-              <p className="text-gray-600 mt-2">{project.description}</p>
+              <div className="p-4">
+                <CardTitle className="text-xl font-semibold text-gray-900">
+                  {project.title}
+                </CardTitle>
+                <p className="text-sm text-gray-600 mt-2">{project.temp}</p>
+                <p className="text-gray-700 mt-4">{project.description}</p>
+              </div>
             </CardHeader>
 
-            <CardContent className="mt-4 space-y-2">
-              <h3 className="text-lg font-semibold text-gray-700">
-                Specifications
+            <CardContent className="px-4 pb-4">
+              <h3 className="text-md font-semibold text-gray-800 mb-3">
+                Tecnologias Utilizadas
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {project.specs.map((spec, index) => (
+                {project.specs.map((spec, idx) => (
                   <div
-                    key={index}
-                    className="flex flex-col items-center p-4 border rounded-md border-gray-100"
+                    key={idx}
+                    className="flex items-center gap-2 p-2 border rounded-md border-gray-200"
                   >
                     <img
                       src={spec.icon}
-                      alt={spec.label}
-                      className="text-3xl mb-2 w-12 h-12"
+                      alt={`Ícone da tecnologia ${spec.label}`}
+                      className="w-8 h-8"
                     />
-                    <span className="text-sm font-medium text-gray-500">
-                      {spec.label}:
-                    </span>
-                    <span className="text-gray-800 font-semibold mt-1">
-                      {spec.value}
-                    </span>
+                    <div>
+                      <p className="text-sm text-gray-600">{spec.label}:</p>
+                      <p className="text-sm font-medium text-gray-800">
+                        {spec.value}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </CardContent>
 
-            <CardFooter className="flex justify-end mt-4">
+            <CardFooter className="px-4 pb-4 flex justify-between items-center">
+              <p className="text-sm text-gray-500 italic">{project.temp}</p>
               <Link href={project.link} passHref>
                 <Button
                   variant="outline"
-                  className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-lg"
-                  title="View Project"
+                  className="bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-4 py-2"
+                  title="Ver Projeto"
                 >
-                  Veja o projeto
+                  Ver Projeto
                 </Button>
               </Link>
             </CardFooter>

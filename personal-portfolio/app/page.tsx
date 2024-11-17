@@ -9,31 +9,40 @@ import SkillsSection from "./components/Skillssection";
 export default function Page() {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      <header className="flex flex-col items-center text-center py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 w-full">
-        <div className="max-w-2xl mx-auto">
+      <header className="flex flex-col items-center text-center py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 w-full text-white">
+        <div className="max-w-3xl mx-auto">
           {/* Intro Section */}
-          <div className="space-y-4">
-            <h1 className="text-4xl font-bold">OLÁ,👋 EU SOU O ERIK</h1>
-            <p className="text-lg font-semibold text-blue-300">DEVELOPER</p>
-            <p className="text-gray-200">
-              APAIXONADO POR TECNOLOGIA, EDUCAÇÃO E POR MUDAR A VIDA DAS PESSOAS
-              ATRAVÉS DA PROGRAMAÇÃO.
+          <div className="space-y-6">
+            <h1 className="text-5xl font-extrabold">
+              OLÁ, <span className="wave-emoji">👋</span> EU SOU O ERIK!
+            </h1>
+            <p className="text-xl font-semibold text-blue-300">
+              DESENVOLVEDOR FULLSTACK
+            </p>
+            <p className="text-lg leading-relaxed">
+              Entusiasta da{" "}
+              <span className="font-bold text-purple-300">tecnologia</span>,
+              apaixonado por{" "}
+              <span className="font-bold text-purple-300">educação</span>, e
+              dedicado a transformar vidas através da{" "}
+              <span className="font-bold text-purple-300">programação</span>. A
+              cada linha de código, busco inovar e criar experiências únicas.
             </p>
           </div>
 
           {/* Avatar Image */}
-          <div className="my-8">
+          <div className="my-10">
             <Image
               src="/EU.png"
               alt="Erik's Avatar"
-              width={128}
-              height={128}
-              className="rounded-full mx-auto"
+              width={160}
+              height={160}
+              className="rounded-full mx-auto border-4 border-white shadow-lg"
             />
           </div>
 
           {/* Social Media Links */}
-          <div className="flex space-x-4 justify-center mt-4">
+          <div className="flex space-x-6 justify-center mt-6">
             <Link
               href="https://www.linkedin.com/in/erik-rafael-dos-santos-416b64251/"
               target="_blank"
@@ -42,9 +51,9 @@ export default function Page() {
               <Image
                 src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg"
                 alt="LinkedIn"
-                width={24}
-                height={24}
-                className="w-6 h-6"
+                width={28}
+                height={28}
+                className="w-8 h-8 hover:scale-110 transition-transform"
               />
             </Link>
             <Link
@@ -55,9 +64,9 @@ export default function Page() {
               <Image
                 src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg"
                 alt="GitHub"
-                width={24}
-                height={24}
-                className="w-6 h-6"
+                width={28}
+                height={28}
+                className="w-8 h-8 hover:scale-110 transition-transform"
               />
             </Link>
             <Link
@@ -68,17 +77,19 @@ export default function Page() {
               <Image
                 src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/adobeacrobatreader.svg"
                 alt="Currículo"
-                width={24}
-                height={24}
-                className="w-6 h-6"
+                width={28}
+                height={28}
+                className="w-8 h-8 hover:scale-110 transition-transform"
               />
             </Link>
           </div>
 
-          {/* "Sobre mim" Button */}
-          <div className="mt-8">
+          {/* Call-to-Action */}
+          <div className="mt-12">
             <Link href="#projects">
-              <Button className="mt-6">Veja meus Projetos</Button>
+              <Button className="bg-purple-600 hover:bg-purple-700 px-8 py-3 text-lg font-semibold rounded-lg shadow-md transition-colors">
+                Veja Meus Projetos
+              </Button>
             </Link>
           </div>
         </div>
@@ -88,19 +99,37 @@ export default function Page() {
       <section className="py-16 px-4 text-center">
         <h2 className="text-3xl font-semibold mb-4">Sobre Mim</h2>
         <p className="max-w-xl mx-auto">
-          Ao longo dos meus estudos e projetos pessoais, desenvolvi uma base em
-          React, JavaScript, TypeScript, HTML e CSS, aplicando essas tecnologias
-          na criação de interfaces modernas e funcionais. Busco aplicar essas
-          habilidades para contribuir com projetos reais e agregar valor às
-          equipes das quais faço parte. Sou uma pessoa dedicada e vejo cada novo
-          desafio como uma oportunidade de aprendizado. Valorizo o trabalho em
-          equipe e a troca de conhecimento, e estou comprometido a evoluir
-          continuamente, acompanhando as tendências e exigências da área.
+          Com experiência em infra e ao longo dos meus estudos e projetos
+          pessoais, desenvolvi conhecimentos sólidos em React, JavaScript,
+          TypeScript, HTML e CSS, aplicando essas tecnologias na criação de
+          interfaces modernas e funcionais. Busco aplicar essas habilidades para
+          contribuir com projetos reais e agregar valor às equipes das quais
+          faço parte. Sou uma pessoa dedicada e vejo cada novo desafio como uma
+          oportunidade de aprendizado. Valorizo o trabalho em equipe e a troca
+          de conhecimento, e estou comprometido a evoluir continuamente,
+          acompanhando as tendências e exigências da área.
         </p>
       </section>
 
+      {/* Sessão de Projetos */}
       <ProjectSpecs />
+
+      {/* Sessão de Skills, Habilidades */}
       <SkillsSection />
+      <section className="py-16 px-4 text-center bg-gray-900">
+        <h2 className="text-3xl font-semibold mb-4 text-white">Onde Estou</h2>
+        <div className="flex justify-center items-center">
+          <div className="w-full max-w-4xl h-96">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15013.138834207304!2d-48.838882586778755!3d-26.304979099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deafdc40afbc4b%3A0x4b39d148cac10ae7!2sJoinville%20-%20Pirabeiraba%2C%20Joinville%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1710420075571!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
 
       <footer className="w-full bg-gray-800 py-4 text-center mt-auto">
         <p className="text-sm text-gray-400">

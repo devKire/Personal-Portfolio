@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
+// import { Chart } from "./Chart";
 
 // Tipagem para as habilidades
 type Skills = {
@@ -20,50 +21,49 @@ const SkillsSection: FC = () => {
   const skills: Skills = {
     linguagens: [
       { name: "HTML", icon: "/HTML5.svg" },
-      { name: "CSS", icon: "/css3.svg" },
+      { name: "CSS", icon: "/CSS3.svg" },
       { name: "JavaScript", icon: "/JavaScript.svg" },
       { name: "TypeScript", icon: "/TypeScript.svg" },
-      { name: "C#", icon: "/csharp.svg" },
-      { name: "Python", icon: "/python.svg" },
+      { name: "C#", icon: "/Csharp.svg" },
+      { name: "Python", icon: "/Python.svg" },
     ],
     frameworks: [
-      { name: "React", icon: "/react.svg" },
-      { name: "NextJS", icon: "/next.js.svg" },
-      { name: "ShadCN", icon: "/shadcn.svg" },
+      { name: "React", icon: "/React.svg" },
+      { name: "NextJS", icon: "/Next.js.svg" },
+      { name: "ShadCN", icon: "/Shadcn.svg" },
     ],
     estilos: [
-      { name: "Bootstrap", icon: "/bootstrap.svg" },
-      { name: "TailwindCSS", icon: "/tailwindcss.svg" },
+      { name: "Bootstrap", icon: "/Bootstrap.svg" },
+      { name: "TailwindCSS", icon: "/TailwindCSS.svg" },
     ],
-    ferramentasBuild: [{ name: "Vite", icon: "/vite.js.svg" }],
+    ferramentasBuild: [{ name: "Vite", icon: "/Vite.js.svg" }],
     controleVersao: [
-      { name: "Git", icon: "/git.svg" },
-      { name: "GitHub", icon: "/github.svg" },
+      { name: "Git", icon: "/Git.svg" },
+      { name: "GitHub", icon: "/GitHub.svg" },
     ],
     apis: [
-      { name: "Firebase Authentication", icon: "/firebase.svg" },
-      { name: "Stripe", icon: "/stripe.svg" },
-      { name: "Discord ", icon: "/discord.svg" },
-      { name: "Prisma", icon: "/prisma.svg" },
-      { name: "Clerk", icon: "/clerk.svg" },
-      { name: "OpenAI API", icon: "/gpt.svg" },
+      { name: "Stripe", icon: "/Stripe.svg" },
+      { name: "Discord ", icon: "/Discord.svg" },
+      { name: "Prisma", icon: "/Prisma.svg" },
+      { name: "Clerk", icon: "/Clerk.svg" },
+      { name: "OpenAI API", icon: "/GPT.svg" },
     ],
     database: [
-      { name: "Firebase", icon: "/firebase.svg" },
-      { name: "Neon", icon: "/neon.svg" },
+      { name: "Firebase", icon: "/Firebase.svg" },
+      { name: "Neon", icon: "/Neon.svg" },
     ],
     ferramentas: [
-      { name: "VScode", icon: "/vscode.svg" },
-      { name: "Unity", icon: "/unity.svg" },
+      { name: "VScode", icon: "/VScode.svg" },
+      { name: "Unity", icon: "/Unity.svg" },
     ],
     outros: [
-      { name: "Photoshop", icon: "/photoshop.svg" },
-      { name: "Illustrator", icon: "/illustrator.svg" },
+      { name: "Photoshop", icon: "/Photoshop.svg" },
+      { name: "Illustrator", icon: "/Illustrator.svg" },
       { name: "LucidChart", icon: "/lucidchart.svg" },
-      { name: "Canva", icon: "/canva.svg" },
-      { name: "Discord", icon: "/discord.svg" },
-      { name: "Teams", icon: "/teams.svg" },
-      { name: "Hacknplan", icon: "/hacknplan.png" },
+      { name: "Canva", icon: "/Canva.svg" },
+      { name: "Discord", icon: "/Discord.svg" },
+      { name: "Teams", icon: "/Teams.svg" },
+      { name: "Hacknplan", icon: "/Hacknplan.png" },
     ],
   };
 
@@ -72,8 +72,8 @@ const SkillsSection: FC = () => {
       <h2 className="text-3xl font-semibold text-center mb-8">
         Habilidades Técnicas
       </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {/* <Chart /> */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {Object.keys(skills).map((key) => (
           <Card key={key} className="bg-white border border-gray-200 shadow-lg">
             <CardHeader>
