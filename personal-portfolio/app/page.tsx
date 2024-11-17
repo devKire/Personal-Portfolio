@@ -5,7 +5,6 @@ import { Button } from "./components/ui/button";
 import ProjectSpecs from "./components/ProjectSpecs";
 
 import SkillsSection from "./components/Skillssection";
-import { Form } from "./components/ui/form";
 
 export default function Page() {
   return (
