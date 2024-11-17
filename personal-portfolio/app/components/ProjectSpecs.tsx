@@ -20,11 +20,11 @@ export default function ProjectSpecs() {
       temp: "Projeto Recente",
       link: "https://lowanx.com.br",
       specs: [
-        { label: "Language", value: "TypeScript", icon: "/TypeScript.svg" },
-        { label: "Library", value: "React", icon: "/React.svg " },
-        { label: "Build Tool", value: "Vite", icon: "/Vite.js.svg" },
-        { label: "UI Framework", value: "Bootstrap", icon: "/Bootstrap.svg" },
-        { label: "Database", value: "Firebase", icon: "/Firebase.svg" },
+        { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
+        { label: "Library", value: "React", icon: "/react.svg" },
+        { label: "Build Tool", value: "Vite", icon: "/vite.js.svg" },
+        { label: "UI Framework", value: "Bootstrap", icon: "/bootstrap.svg" },
+        { label: "Database", value: "Firebase", icon: "/firebase.svg" },
       ],
     },
     {
@@ -34,9 +34,9 @@ export default function ProjectSpecs() {
       temp: "Projeto Antigo",
       link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
+        { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
         { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
-        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/css3.svg" },
       ],
     },
     {
@@ -47,15 +47,15 @@ export default function ProjectSpecs() {
       temp: "Projeto Recente",
       link: "https://lamour-games.vercel.app",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
-        { label: "Library", value: "React", icon: "/React.svg" },
+        { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
+        { label: "Library", value: "React", icon: "/react.svg" },
         {
           label: "Authentication",
           value: "Discord OAuth",
-          icon: "/Discord.svg",
+          icon: "/discord.svg",
         },
-        { label: "Backend", value: "Firebase", icon: "/Firebase.svg" },
-        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+        { label: "Backend", value: "Firebase", icon: "/firebase.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/css3.svg" },
       ],
     },
     {
@@ -66,9 +66,9 @@ export default function ProjectSpecs() {
       temp: "Projeto Recente",
       link: "https://amantesdedogs.vercel.app",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
-        { label: "Library", value: "React", icon: "/React.svg" },
-        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+        { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
+        { label: "Library", value: "React", icon: "/react.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/css3.svg" },
       ],
     },
     {
@@ -78,9 +78,9 @@ export default function ProjectSpecs() {
       temp: "Projeto Antigo",
       link: "https://kvd-kire-visual-designers.vercel.app",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
-        { label: "Markup Language", value: "HTML5", icon: "/HTML5.svg" },
-        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+        { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
+        { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/css3.svg" },
       ],
     },
     {
@@ -90,9 +90,9 @@ export default function ProjectSpecs() {
       temp: "Projeto Antigo",
       link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
       specs: [
-        { label: "Language", value: "JavaScript", icon: "/JavaScript.svg" },
+        { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
         { label: "Markup Language", value: "HTML5", icon: "/html5.svg" },
-        { label: "Styling", value: "Custom CSS", icon: "/CSS3.svg" },
+        { label: "Styling", value: "Custom CSS", icon: "/css3.svg" },
       ],
     },
   ];
