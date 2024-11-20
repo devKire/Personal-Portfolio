@@ -4,72 +4,78 @@ import { Badge } from "./ui/badge";
 import { Chart } from "./Chart";
 
 type Skills = {
-  linguagens: { name: string; icon: string; percent: number }[];
-  frameworks: { name: string; icon: string; percent: number }[];
-  estilos: { name: string; icon: string; percent: number }[];
-  ferramentasBuild: { name: string; icon: string; percent: number }[];
-  controleVersao: { name: string; icon: string; percent: number }[];
-  apis: { name: string; icon: string; percent: number }[];
-  database: { name: string; icon: string; percent: number }[];
-  ferramentas: { name: string; icon: string; percent: number }[];
-  outros: { name: string; icon: string; percent: number }[];
+  linguagens: { name: string; icon: string }[];
+  frameworks: { name: string; icon: string }[];
+  estilos: { name: string; icon: string }[];
+  ferramentasBuild: { name: string; icon: string }[];
+  controleVersao: { name: string; icon: string }[];
+  apis: { name: string; icon: string }[];
+  database: { name: string; icon: string }[];
+  ferramentas: { name: string; icon: string }[];
+  ferramentasDesign: { name: string; icon: string }[]; // Nova categoria para ferramentas de design
+  outros: { name: string; icon: string }[]; // Categoria para outros
 };
 
-// Componente de sessão de habilidades
 const SkillsSection: FC = () => {
   const skills: Skills = {
     linguagens: [
-      { name: "HTML", icon: "/html5.svg", percent: 20 },
-      { name: "CSS", icon: "/css3.svg", percent: 20 },
-      { name: "JavaScript", icon: "/javascript.svg", percent: 20 },
-      { name: "TypeScript", icon: "/typescript.svg", percent: 20 },
-      { name: "C#", icon: "/csharp.svg", percent: 20 },
-      { name: "Python", icon: "/python.svg", percent: 20 },
+      { name: "HTML", icon: "/html5.svg" },
+      { name: "CSS", icon: "/css3.svg" },
+      { name: "JavaScript", icon: "/javascript.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "C#", icon: "/csharp.svg" },
+      { name: "Python", icon: "/python.svg" },
     ],
     frameworks: [
-      { name: "React", icon: "/react.svg", percent: 20 },
-      { name: "NextJS", icon: "/next.js.svg", percent: 20 },
-      { name: "ShadCN", icon: "/shadcn.svg", percent: 20 },
+      { name: "React", icon: "/react.svg" },
+      { name: "NextJS", icon: "/next.js.svg" },
+      { name: "ShadCN", icon: "/shadcn.svg" },
     ],
     estilos: [
-      { name: "Bootstrap", icon: "/bootstrap.svg", percent: 20 },
-      { name: "TailwindCSS", icon: "/tailwindcss.svg", percent: 20 },
+      { name: "Bootstrap", icon: "/bootstrap.svg" },
+      { name: "TailwindCSS", icon: "/tailwindcss.svg" },
     ],
-    ferramentasBuild: [{ name: "Vite", icon: "/vite.js.svg", percent: 20 }],
+    ferramentasBuild: [{ name: "Vite", icon: "/vite.js.svg" }],
     controleVersao: [
-      { name: "Git", icon: "/git.svg", percent: 20 },
-      { name: "GitHub", icon: "/github.svg", percent: 20 },
+      { name: "Git", icon: "/git.svg" },
+      { name: "GitHub", icon: "/github.svg" },
     ],
     apis: [
-      { name: "Stripe", icon: "/stripe.svg", percent: 20 },
-      { name: "Discord", icon: "/discord.svg", percent: 20 },
-      { name: "Prisma", icon: "/prisma.svg", percent: 20 },
-      { name: "Clerk", icon: "/clerk.svg", percent: 20 },
-      { name: "OpenAI API", icon: "/gpt.svg", percent: 20 },
+      { name: "Stripe", icon: "/stripe.svg" },
+      { name: "Discord", icon: "/discord.svg" },
+      { name: "Prisma", icon: "/prisma.svg" },
+      { name: "Clerk", icon: "/clerk.svg" },
+      { name: "OpenAI API", icon: "/gpt.svg" },
+      { name: "Recharts", icon: "/recharts.svg" },
+      { name: "Emailjs-com", icon: "/emailjs.jpg" },
     ],
     database: [
-      { name: "Firebase", icon: "/firebase.svg", percent: 20 },
-      { name: "Neon", icon: "/neon.svg", percent: 20 },
+      { name: "Firebase", icon: "/firebase.svg" },
+      { name: "Neon", icon: "/neon.svg" },
     ],
     ferramentas: [
-      { name: "VScode", icon: "/vscode.svg", percent: 20 },
-      { name: "Unity", icon: "/unity.svg", percent: 20 },
+      { name: "VScode", icon: "/vscode.svg" },
+      { name: "Unity", icon: "/unity.svg" },
+    ],
+    ferramentasDesign: [
+      // Ferramentas para design visual
+      { name: "Photoshop", icon: "/photoshop.svg" },
+      { name: "Illustrator", icon: "/illustrator.svg" },
+      { name: "LucidChart", icon: "/lucidchart.svg" },
+      { name: "Canva", icon: "/canva.svg" },
     ],
     outros: [
-      { name: "Photoshop", icon: "/photoshop.svg", percent: 20 },
-      { name: "Illustrator", icon: "/illustrator.svg", percent: 20 },
-      { name: "LucidChart", icon: "/lucidchart.svg", percent: 20 },
-      { name: "Canva", icon: "/canva.svg", percent: 20 },
-      { name: "Discord", icon: "/discord.svg", percent: 20 },
-      { name: "Teams", icon: "/teams.svg", percent: 20 },
-      { name: "Hacknplan", icon: "/hacknplan.png", percent: 20 },
+      { name: "Teams", icon: "/teams.svg" },
+      { name: "Discord", icon: "/discord.svg" },
+      { name: "Hacknplan", icon: "/hacknplan.png" },
+      { name: "Lucide React", icon: "/lucide.svg" },
     ],
   };
 
   return (
     <section className="py-16 px-4 text-white bg-black bg-opacity-50">
       <h2 className="text-3xl font-semibold text-center mb-8">
-        Habilidades Técnicas
+        Técnologias e Ferramentas que utilizo ou já utilizei
       </h2>
       <Chart />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">

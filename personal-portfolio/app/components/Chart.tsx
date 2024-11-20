@@ -17,12 +17,13 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
+
 const chartData = [
-  { language: "htmlcss", porcentagem: 40, fill: "var(--color-htmlcss)" },
+  { language: "htmlcss", porcentagem: 60, fill: "var(--color-htmlcss)" },
   { language: "typescript", porcentagem: 10, fill: "var(--color-typescript)" },
   { language: "javascript", porcentagem: 20, fill: "var(--color-javascript)" },
-  { language: "csharp", porcentagem: 20, fill: "var(--color-csharp)" },
-  { language: "python", porcentagem: 10, fill: "var(--color-python)" },
+  { language: "csharp", porcentagem: 5, fill: "var(--color-csharp)" },
+  { language: "python", porcentagem: 5, fill: "var(--color-python)" },
 ];
 
 const chartConfig = {
@@ -58,10 +59,10 @@ export function Chart() {
         <CardHeader className="items-center pb-0">
           <CardTitle>Linguagens que mais tenho conhecimento</CardTitle>
           <CardDescription>
-            Este gráfico mostra as linguagens de programação nas quais tenho
-            mais conhecimento e experiência. Ele reflete minha jornada de
-            aprendizado e prática em cada uma delas, destacando as que utilizo
-            com mais frequência em meus projetos.
+            Este gráfico mostra as linguagens de programação e marcação nas
+            quais tenho mais conhecimento e experiência. Ele reflete minha
+            jornada de aprendizado e prática em cada uma delas, destacando as
+            que utilizo com mais frequência em meus projetos.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex-1 pb-0">

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,14 +13,35 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 
-export default function ProjectSpecs() {
-  const projects = [
+export default function ProjectsSection() {
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
+
+  const categories = ["Todos", "Projetos Recentes", "Projetos Antigos"];
+
+  type Spec = {
+    label: string;
+    value: string;
+    icon: string;
+  };
+
+  type Project = {
+    title: string;
+    imgSrc: string;
+    description: string;
+    temp: string;
+    development: string;
+    link: string;
+    specs: Spec[];
+  };
+
+  const projects: Project[] = [
     {
       title: "LowAnx Project",
       imgSrc: "/lowanx.png",
       description:
         "O LowAnx é uma iniciativa dedicada a fornecer apoio e informações valiosas para aqueles que enfrentam desafios relacionados à ansiedade.",
-      temp: "Projeto Recente",
+      temp: "Projetos Recentes",
+      development: "Em desenvolvimento",
       link: "https://lowanx.com.br",
       specs: [
         { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
@@ -31,7 +55,8 @@ export default function ProjectSpecs() {
       title: "Portifolio V2",
       imgSrc: "/portfoliov2.png",
       description: "Ultima versão do portifolio",
-      temp: "Projeto Recente",
+      temp: "Projetos Recentes",
+      development: "Em desenvolvimento",
       link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
       specs: [
         { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
@@ -39,6 +64,9 @@ export default function ProjectSpecs() {
         { label: "Framework", value: "NextJS", icon: "/next.js.svg" },
         { label: "Framework", value: "ShadCN", icon: "/shadcn.svg" },
         { label: "Styling", value: "TailwindCSS", icon: "/tailwindcss.svg" },
+        { label: "Form Handling", value: "emailjs-com", icon: "/emailjs.jpg" },
+        { label: "Charting", value: "Recharts", icon: "/recharts.svg" },
+        { label: "Icon Library", value: "Lucide React", icon: "/lucide.svg" },
       ],
     },
     {
@@ -46,7 +74,8 @@ export default function ProjectSpecs() {
       imgSrc: "/lamour.png",
       description:
         "A LAMOUR Games nasceu com o objetivo de unir gamers de todas as plataformas em uma única comunidade. Nosso foco é promover diversão, interação e oportunidades para que jogadores possam se conectar, compartilhar experiências e evoluir juntos. Seja você um jogador casual ou um profissional, nosso espaço é para todos que amam jogos!",
-      temp: "Projeto Recente",
+      temp: "Projetos Recentes",
+      development: "Em desenvolvimento",
       link: "https://lamour-games.vercel.app",
       specs: [
         { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
@@ -65,7 +94,8 @@ export default function ProjectSpecs() {
       imgSrc: "/dog.png",
       description:
         "Pagina de vendas de um e-book de receitas saudáveis para pets.",
-      temp: "Projeto Recente",
+      temp: "Projetos Recentes",
+      development: "Finalizado",
       link: "https://amantesdedogs.vercel.app",
       specs: [
         { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
@@ -77,7 +107,8 @@ export default function ProjectSpecs() {
       title: "Kire Visual Designers",
       imgSrc: "/designers.png",
       description: "Projeto inicial de um site de designers",
-      temp: "Projeto Antigo",
+      temp: "Projetos Antigos",
+      development: "Finalizado",
       link: "https://kvd-kire-visual-designers.vercel.app",
       specs: [
         { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
@@ -89,7 +120,8 @@ export default function ProjectSpecs() {
       title: "Portifolio V1",
       imgSrc: "/portfolio.png",
       description: "Primeira versão do portifolio",
-      temp: "Projeto Antigo",
+      temp: "Projetos Antigos",
+      development: "Finalizado",
       link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
       specs: [
         { label: "Language", value: "JavaScript", icon: "/javascript.svg" },
@@ -99,13 +131,35 @@ export default function ProjectSpecs() {
     },
   ];
 
+  const filteredProjects =
+    selectedCategory === "Todos"
+      ? projects
+      : projects.filter((project) => project.temp === selectedCategory);
+
   return (
     <section id="projects" className="py-16 px-4 bg-gray-900">
-      <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <h2 className="text-3xl font-bold text-center text-white mb-8">
         Meus Projetos
       </h2>
+
+      {/* Dropdown de categorias */}
+      <div className="flex justify-center mb-8">
+        <select
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          className="p-3 bg-gray-700 text-white rounded-lg outline-none"
+        >
+          {categories.map((category, idx) => (
+            <option key={idx} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Grid de projetos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <Card
             key={index}
             className="bg-white border border-gray-200 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
@@ -122,7 +176,9 @@ export default function ProjectSpecs() {
                 <CardTitle className="text-xl font-semibold text-gray-900">
                   {project.title}
                 </CardTitle>
-                <p className="text-sm text-gray-600 mt-2">{project.temp}</p>
+                <p className="text-sm text-gray-600 mt-2">
+                  {project.development}
+                </p>
                 <p className="text-gray-700 mt-4">{project.description}</p>
               </div>
             </CardHeader>
@@ -154,7 +210,9 @@ export default function ProjectSpecs() {
             </CardContent>
 
             <CardFooter className="px-4 pb-4 flex justify-between items-center">
-              <p className="text-sm text-gray-500 italic">{project.temp}</p>
+              <p className="text-sm text-gray-500 italic">
+                {project.development}
+              </p>
               <Link href={project.link} passHref>
                 <Button
                   variant="outline"

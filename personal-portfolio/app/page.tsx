@@ -2,9 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./components/ui/button";
 
-import ProjectSpecs from "./components/ProjectSpecs";
+import ProjectsSection from "./components/ProjectsSection";
 
 import SkillsSection from "./components/Skillssection";
+import { Textarea } from "./components/ui/textarea";
+import { Input } from "./components/ui/input";
+import ContactSection from "./components/ContactSection";
 
 export default function Page() {
   return (
@@ -113,10 +116,39 @@ export default function Page() {
       </section>
 
       {/* Sessão de Projetos */}
-      <ProjectSpecs />
+      <ProjectsSection />
 
       {/* Sessão de Skills, Habilidades */}
       <SkillsSection />
+
+      <section className="py-16 px-4 text-center bg-gray-900">
+        <h2 className="text-3xl font-semibold mb-4">Últimos Artigos</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article className="bg-gray-800 p-4 rounded-lg shadow-lg">
+            <h3 className="text-lg font-bold mb-2">Introdução ao TypeScript</h3>
+            <p>
+              Entenda por que o TypeScript é a escolha ideal para projetos
+              escaláveis.
+            </p>
+            <Link href="/articles/typescript-introduction">
+              <p className="text-purple-400 hover:underline">Leia mais</p>
+            </Link>
+          </article>
+          <article className="bg-gray-800 p-4 rounded-lg shadow-lg">
+            <h3 className="text-lg font-bold mb-2">
+              Melhores práticas com React
+            </h3>
+            <p>
+              Dicas essenciais para desenvolver componentes reutilizáveis e
+              performáticos.
+            </p>
+            <Link href="/articles/react-best-practices">
+              <p className="text-purple-400 hover:underline">Leia mais</p>
+            </Link>
+          </article>
+        </div>
+      </section>
+
       <section className="py-16 px-4 text-center bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4 text-white">Onde Estou</h2>
         <div className="flex justify-center items-center">
@@ -131,7 +163,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-
+      <ContactSection />
       <footer className="w-full bg-gray-800 py-4 text-center mt-auto">
         <p className="text-sm text-gray-400">
           &copy; 2023 ERIK RAFAEL DOS SANTOS. Todos os direitos reservados.
