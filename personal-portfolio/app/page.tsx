@@ -74,7 +74,7 @@ export default function Page() {
               />
             </Link>
             <Link
-              href="/assets/pdf/Currículo ERIK RAFAEL DOS SANTOS.pdf"
+              href="/ERIK RAFAEL DOS SANTOS - TI.pdf"
               target="_blank"
               title="Currículo PDF"
             >
