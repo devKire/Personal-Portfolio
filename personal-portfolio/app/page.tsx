@@ -121,7 +121,7 @@ export default function Page() {
       {/* Sessão de Skills, Habilidades */}
       <SkillsSection />
 
-      <section className="py-16 px-4 text-center bg-gray-900">
+      {/* <section className="py-16 px-4 text-center bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4">Últimos Artigos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <article className="bg-gray-800 p-4 rounded-lg shadow-lg">
@@ -147,7 +147,7 @@ export default function Page() {
             </Link>
           </article>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-16 px-4 text-center bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4 text-white">Onde Estou</h2>
