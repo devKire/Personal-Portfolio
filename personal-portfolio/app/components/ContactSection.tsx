@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 const sendEmail = (e: React.FormEvent) => {
   e.preventDefault();
@@ -46,69 +47,55 @@ const sendEmail = (e: React.FormEvent) => {
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-16 px-4 text-center bg-gray-800">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4 text-white">
-          Entre em Contato
-        </h2>
-        <form
-          onSubmit={sendEmail}
-          className="space-y-6 bg-gray-900 p-8 rounded-lg shadow-lg"
-        >
-          {/* Nome */}
-          <div>
-            <label htmlFor="name" className="text-white text-lg">
-              Nome
-            </label>
-            <Input
-              id="name"
-              name="name"
-              type="text"
-              required
-              placeholder="Digite seu nome"
-              className="w-full mt-2 text-black"
-            />
-          </div>
-
-          {/* E-mail */}
-          <div>
-            <label htmlFor="email" className="text-white text-lg">
-              E-mail
-            </label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="Digite seu e-mail"
-              className="w-full mt-2 text-black"
-            />
-          </div>
-
-          {/* Mensagem */}
-          <div>
-            <label htmlFor="message" className="text-white text-lg">
-              Mensagem
-            </label>
-            <Textarea
-              id="message"
-              name="message"
-              required
-              placeholder="Sua mensagem"
-              rows={4}
-              className="w-full mt-2 text-black"
-            />
-          </div>
-
-          {/* Botão de Enviar */}
-          <Button
-            type="submit"
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors"
-          >
-            Enviar Mensagem
-          </Button>
-        </form>
+    <form onSubmit={sendEmail}>
+      <div className="grid gap-4 py-4">
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="name" className="text-right">
+            Nome
+          </Label>
+          <Input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder="Digite seu nome"
+            className="col-span-3"
+          />
+        </div>
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="email" className="text-right">
+            Email
+          </Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="Digite seu e-mail"
+            className="col-span-3"
+          />
+        </div>
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="message" className="text-right">
+            Mensagem
+          </Label>
+          <Textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Sua mensagem"
+            rows={4}
+            className="col-span-3"
+          />
+        </div>
       </div>
-    </section>
+      {/* Botão de Enviar */}
+      <Button
+        type="submit"
+        className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors"
+      >
+        Enviar Mensagem
+      </Button>
+    </form>
   );
 }

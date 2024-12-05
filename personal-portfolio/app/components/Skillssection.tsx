@@ -73,7 +73,10 @@ const SkillsSection: FC = () => {
   };
 
   return (
-    <section className="py-16 px-4 text-white bg-black bg-opacity-50">
+    <section
+      id="skills"
+      className="py-16 px-4 text-white bg-black bg-opacity-50"
+    >
       <h2 className="text-3xl font-semibold text-center mb-8">
         Técnologias e Ferramentas que utilizo ou já utilizei
       </h2>

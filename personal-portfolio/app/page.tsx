@@ -5,14 +5,15 @@ import { Button } from "./components/ui/button";
 import ProjectsSection from "./components/ProjectsSection";
 
 import SkillsSection from "./components/Skillssection";
-import { Textarea } from "./components/ui/textarea";
-import { Input } from "./components/ui/input";
-import ContactSection from "./components/ContactSection";
+import { SocialIcons } from "./components/SocialIcons";
 
 export default function Page() {
   return (
     <div className=" text-white min-h-screen">
-      <header className="flex flex-col items-center text-center py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 w-full text-white">
+      <header
+        id="introduction"
+        className="flex flex-col items-center text-center py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 w-full text-white"
+      >
         <div className="max-w-3xl mx-auto">
           {/* Intro Section */}
           <div className="space-y-6">
@@ -33,7 +34,6 @@ export default function Page() {
               únicas.
             </p>
           </div>
-
           {/* Avatar Image */}
           <div className="my-10">
             <Image
@@ -44,50 +44,8 @@ export default function Page() {
               className="rounded-full mx-auto border-4 border-white shadow-lg"
             />
           </div>
-
           {/* Social Media Links */}
-          <div className="flex space-x-6 justify-center mt-6">
-            <Link
-              href="https://www.linkedin.com/in/erik-rafael-dos-santos-416b64251/"
-              target="_blank"
-              title="LinkedIn"
-            >
-              <Image
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg"
-                alt="LinkedIn"
-                width={28}
-                height={28}
-                className="w-8 h-8 hover:scale-110 transition-transform"
-              />
-            </Link>
-            <Link
-              href="https://github.com/devKire"
-              target="_blank"
-              title="GitHub"
-            >
-              <Image
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg"
-                alt="GitHub"
-                width={28}
-                height={28}
-                className="w-8 h-8 hover:scale-110 transition-transform"
-              />
-            </Link>
-            <Link
-              href="/ERIK RAFAEL DOS SANTOS - TI.pdf"
-              target="_blank"
-              title="Currículo PDF"
-            >
-              <Image
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/adobeacrobatreader.svg"
-                alt="Currículo"
-                width={28}
-                height={28}
-                className="w-8 h-8 hover:scale-110 transition-transform"
-              />
-            </Link>
-          </div>
-
+          <SocialIcons />
           {/* Call-to-Action */}
           <div className="mt-12">
             <Link href="#projects">
@@ -100,7 +58,10 @@ export default function Page() {
       </header>
 
       {/* About Section */}
-      <section className="py-16 px-4 text-center bg-blur-sm bg-black bg-opacity-75">
+      <section
+        id="about"
+        className="py-16 px-4 text-center bg-blur-sm bg-black bg-opacity-75"
+      >
         <h2 className="text-3xl font-semibold mb-4">Sobre Mim</h2>
         <p className="max-w-xl mx-auto">
           Com experiência em infra e ao longo dos meus estudos e projetos
@@ -148,8 +109,8 @@ export default function Page() {
           </article>
         </div>
       </section> */}
-
-      <section className="py-16 px-4 text-center bg-gray-900">
+      {/* <CarouselSection /> */}
+      <section id="localization" className="py-16 px-4 text-center bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4 text-white">Onde Estou</h2>
         <div className="flex justify-center items-center">
           <div className="w-full max-w-4xl h-96">
@@ -163,7 +124,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <ContactSection />
       <footer className="w-full bg-gray-800 py-4 text-center mt-auto">
         <p className="text-sm text-gray-400">
           &copy; 2023 ERIK RAFAEL DOS SANTOS. Todos os direitos reservados.

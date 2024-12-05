@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { MenuSection } from "./components/MenuSection";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-cover bg-center bg-fixed`}
         style={{ backgroundImage: "url('/rover.jpg')" }}
       >
+        <MenuSection />
         {children}
       </body>
     </html>

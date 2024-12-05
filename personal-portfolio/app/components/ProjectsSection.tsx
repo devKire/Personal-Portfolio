@@ -13,6 +13,17 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 
+import React from "react";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "./ui/carousel";
+
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
@@ -136,6 +147,22 @@ export default function ProjectsSection() {
       ? projects
       : projects.filter((project) => project.temp === selectedCategory);
 
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
   return (
     <section id="projects" className="py-16 px-4 bg-gray-900">
       <h2 className="text-3xl font-bold text-center text-white mb-8">
@@ -157,8 +184,95 @@ export default function ProjectsSection() {
         </select>
       </div>
 
+      <div className="mx-auto max-w-3xl">
+        <Carousel setApi={setApi} className="w-full max-w-3xl">
+          <CarouselContent>
+            {filteredProjects.map((project, index) => (
+              <CarouselItem>
+                <Card
+                  key={index}
+                  className="rounded-lg shadow-lg transform transition-transform duration-300"
+                >
+                  <CardHeader className="items-center justify-center">
+                    <Image
+                      src={project.imgSrc}
+                      alt={`Imagem do projeto ${project.title}`}
+                      width={400}
+                      height={300}
+                      className="rounded-t-lg"
+                    />
+                    <div className="p-4">
+                      <CardTitle className="text-xl font-semibold text-gray-900">
+                        {project.title}
+                      </CardTitle>
+                      <p className="text-sm text-gray-600 mt-2">
+                        {project.development}
+                      </p>
+                      <p className="text-gray-700 mt-4">
+                        {project.description}
+                      </p>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="px-4 pb-4">
+                    <h3 className="text-md font-semibold text-gray-800 mb-3">
+                      Tecnologias Utilizadas
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {project.specs.map((spec, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 p-2 border rounded-md border-gray-200"
+                        >
+                          <img
+                            src={spec.icon}
+                            alt={`Ícone da tecnologia ${spec.label}`}
+                            className="w-8 h-8"
+                          />
+                          <div>
+                            <p className="text-sm text-gray-600">
+                              {spec.label}:
+                            </p>
+                            <p className="text-sm font-medium text-gray-800">
+                              {spec.value}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="px-4 pb-4 flex justify-between items-center">
+                    <p className="text-sm text-gray-500 italic">
+                      {project.development}
+                    </p>
+                    <Link href={project.link} passHref>
+                      <Button
+                        variant="outline"
+                        className="bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-4 py-2"
+                        title="Ver Projeto"
+                      >
+                        Ver Projeto
+                      </Button>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white rounded-full p-3">
+            &larr;
+          </CarouselPrevious>
+          <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white rounded-full p-3">
+            &rarr;
+          </CarouselNext>
+        </Carousel>
+        <div className="py-4 text-center text-lg text-gray-300">
+          Projeto {current} de {count}
+        </div>
+      </div>
+
       {/* Grid de projetos */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {filteredProjects.map((project, index) => (
           <Card
             key={index}
@@ -225,7 +339,7 @@ export default function ProjectsSection() {
             </CardFooter>
           </Card>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
