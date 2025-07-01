@@ -47,6 +47,34 @@ export default function ProjectsSection() {
 
   const projects: Project[] = [
     {
+      title: "Cantinho Gourmet",
+      imgSrc: "/cantinhogourmet.png",
+      description:
+        "O Cantinho Gourmet é um restaurante especializado em marmitas saborosas e equilibradas, oferecendo praticidade para o seu dia a dia. Saúde e sabor na medida certa!",
+      temp: "Projetos Recentes",
+      development: "Em desenvolvimento",
+      link: "https://cantinho-gourmet-theta.vercel.app/",
+      specs: [
+        { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
+        { label: "Framework", value: "Next.js", icon: "/nextjs.svg" },
+        {
+          label: "UI Framework",
+          value: "Tailwind CSS",
+          icon: "/tailwindcss.svg",
+        },
+        { label: "UI Library", value: "Radix UI", icon: "/radix-ui.svg" },
+        { label: "ORM", value: "Prisma", icon: "/prisma.svg" },
+        { label: "Database", value: "Neon", icon: "/neon.svg" },
+        { label: "Auth", value: "JWT + Bcrypt", icon: "/jwt.svg" },
+        {
+          label: "Form",
+          value: "React Hook Form + Zod",
+          icon: "/react.svg",
+        },
+        { label: "Payments", value: "Stripe", icon: "/stripe.svg" },
+      ],
+    },
+    {
       title: "LowAnx Project",
       imgSrc: "/lowanx.png",
       description:

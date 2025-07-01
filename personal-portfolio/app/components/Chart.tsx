@@ -19,11 +19,11 @@ import {
 } from "./ui/chart";
 
 const chartData = [
-  { language: "htmlcss", porcentagem: 60, fill: "var(--color-htmlcss)" },
-  { language: "typescript", porcentagem: 10, fill: "var(--color-typescript)" },
+  { language: "htmlcss", porcentagem: 40, fill: "var(--color-htmlcss)" },
+  { language: "typescript", porcentagem: 15, fill: "var(--color-typescript)" },
   { language: "javascript", porcentagem: 20, fill: "var(--color-javascript)" },
   { language: "csharp", porcentagem: 5, fill: "var(--color-csharp)" },
-  { language: "python", porcentagem: 5, fill: "var(--color-python)" },
+  { language: "python", porcentagem: 20, fill: "var(--color-python)" },
 ];
 
 const chartConfig = {
