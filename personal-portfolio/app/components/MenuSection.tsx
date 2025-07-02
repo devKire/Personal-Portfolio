@@ -102,6 +102,16 @@ export function MenuSection() {
                   <Button className="w-full">Técnologias e Ferramentas</Button>
                 </SheetClose>
               </Link>
+              <Link href="#education">
+                <SheetClose asChild>
+                  <Button className="w-full">Formação Acadêmica</Button>
+                </SheetClose>
+              </Link>
+              <Link href="#certificates">
+                <SheetClose asChild>
+                  <Button className="w-full">Certificados</Button>
+                </SheetClose>
+              </Link>
               <Link href="#localization">
                 <SheetClose asChild>
                   <Button className="w-full">Onde Estou</Button>

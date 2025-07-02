@@ -25,6 +25,7 @@ const SkillsSection: FC = () => {
       { name: "TypeScript", icon: "/typescript.svg" },
       { name: "C#", icon: "/csharp.svg" },
       { name: "Python", icon: "/python.svg" },
+      { name: "Portugol", icon: "/portugol.svg" },
     ],
     frameworks: [
       { name: "React", icon: "/react.svg" },
@@ -52,10 +53,14 @@ const SkillsSection: FC = () => {
     database: [
       { name: "Firebase", icon: "/firebase.svg" },
       { name: "Neon", icon: "/neon.svg" },
+      { name: "MySQL", icon: "/mysql.svg" },
     ],
     ferramentas: [
       { name: "VScode", icon: "/vscode.svg" },
       { name: "Unity", icon: "/unity.svg" },
+      { name: "Excel", icon: "/excel.svg" },
+      { name: "Word", icon: "/word.svg" },
+      { name: "Power BI", icon: "/powerbi.svg" },
     ],
     ferramentasDesign: [
       // Ferramentas para design visual

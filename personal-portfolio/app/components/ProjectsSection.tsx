@@ -96,7 +96,7 @@ export default function ProjectsSection() {
       description: "Ultima versão do portifolio",
       temp: "Projetos Recentes",
       development: "Em desenvolvimento",
-      link: "https://portifolio-erik-santos.vercel.app/pgPrincipal/pgPrincipal.html",
+      link: "https://erikdossantos.vercel.app",
       specs: [
         { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
         { label: "Library", value: "React", icon: "/react.svg" },

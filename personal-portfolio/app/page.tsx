@@ -6,6 +6,8 @@ import ProjectsSection from "./components/ProjectsSection";
 
 import SkillsSection from "./components/Skillssection";
 import { SocialIcons } from "./components/SocialIcons";
+import EducationSection from "./components/EducationSection";
+import CertificatesSection from "./components/CertificatesSection";
 
 export default function Page() {
   return (
@@ -60,20 +62,52 @@ export default function Page() {
       {/* About Section */}
       <section
         id="about"
-        className="py-16 px-4 text-center bg-blur-sm bg-black bg-opacity-75"
+        className="py-16 px-4 text-center bg-black bg-opacity-75 backdrop-blur-sm text-white"
       >
-        <h2 className="text-3xl font-semibold mb-4">Sobre Mim</h2>
-        <p className="max-w-xl mx-auto">
-          Com experiência em infra e ao longo dos meus estudos e projetos
-          pessoais, desenvolvi conhecimentos sólidos em React, JavaScript,
-          TypeScript, HTML e CSS, aplicando essas tecnologias na criação de
-          interfaces modernas e funcionais. Busco aplicar essas habilidades para
-          contribuir com projetos reais e agregar valor às equipes das quais
-          faço parte. Sou uma pessoa dedicada e vejo cada novo desafio como uma
-          oportunidade de aprendizado. Valorizo o trabalho em equipe e a troca
-          de conhecimento, e estou comprometido a evoluir continuamente,
-          acompanhando as tendências e exigências da área.
-        </p>
+        <h2 className="text-3xl font-semibold mb-6">Sobre Mim</h2>
+
+        <div className="max-w-3xl mx-auto space-y-4 text-gray-200">
+          <p>
+            Olá! 👋 Sou <strong>Erik Rafael dos Santos</strong>, um jovem
+            apaixonado por tecnologia, educação e o impacto positivo que ela
+            pode gerar na vida das pessoas. Atualmente curso{" "}
+            <strong>Análise e Desenvolvimento de Sistemas</strong> pela
+            Faculdade SENAI em Joinville – SC, e aplico meus conhecimentos nas
+            áreas de <strong>TI, programação, design</strong> e{" "}
+            <strong>automação</strong>, tanto de forma autônoma quanto no meu
+            dia a dia profissional.
+          </p>
+
+          <p>
+            Tenho experiência com{" "}
+            <strong>React, JavaScript, TypeScript, HTML e CSS</strong>,
+            desenvolvendo interfaces modernas, acessíveis e funcionais. Além da
+            área de programação, aplico meus conhecimentos técnicos no meu cargo
+            atual como <strong>Operador de Logística</strong>, atuando
+            diretamente na <strong>análise de dados e indicadores</strong> por
+            meio do <strong>Excel</strong> e <strong>Power BI</strong>. Sou
+            movido por aprendizado contínuo e estou sempre em busca de desafios
+            que me façam evoluir como profissional e como pessoa.
+          </p>
+
+          <p>
+            Valorizo o <strong>trabalho em equipe</strong>, a{" "}
+            <strong>troca de conhecimento</strong> e o foco em entregar soluções
+            com propósito. Meu objetivo é crescer rapidamente na área de
+            tecnologia e colaborar com produtos que realmente façam a diferença.
+          </p>
+
+          <div className="mt-8 text-sm text-gray-400">
+            <p>
+              <strong>Idiomas:</strong> Português (nativo), Espanhol
+              (intermediário), Inglês técnico (básico)
+            </p>
+            <p className="mt-2">
+              <strong>Hobbies:</strong> Pratica de leitura, jogatinas com meus
+              amigos e ouvir músicas.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Sessão de Projetos */}
@@ -81,6 +115,10 @@ export default function Page() {
 
       {/* Sessão de Skills, Habilidades */}
       <SkillsSection />
+
+      <EducationSection />
+
+      <CertificatesSection />
 
       {/* <section className="py-16 px-4 text-center bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4">Últimos Artigos</h2>

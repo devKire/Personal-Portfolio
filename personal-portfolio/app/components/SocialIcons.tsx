@@ -26,7 +26,7 @@ export function SocialIcons() {
           className="w-8 h-8 hover:scale-110 transition-transform"
         />
       </Link>
-      <Link href="https://wa.me/47999248948" target="_blank" title="Whatsapp">
+      <Link href="https://wa.me/47999535245" target="_blank" title="Whatsapp">
         <Image
           src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg"
           alt="Whatsapp"
