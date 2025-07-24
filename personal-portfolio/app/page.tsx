@@ -37,13 +37,13 @@ export default function Page() {
             </p>
           </div>
           {/* Avatar Image */}
-          <div className="my-10">
+          <div className="my-10 ">
             <Image
-              src="/EU.png"
+              src="/EU2.jpg"
               alt="Erik's Avatar"
               width={160}
               height={160}
-              className="rounded-full mx-auto border-4 border-white shadow-lg"
+              className="rounded-full mx-auto border-4 border-white shadow-lg hover:scale-105 transition-transform duration-300"
             />
           </div>
           {/* Social Media Links */}
@@ -73,9 +73,9 @@ export default function Page() {
             pode gerar na vida das pessoas. Atualmente curso{" "}
             <strong>Análise e Desenvolvimento de Sistemas</strong> pela
             Faculdade SENAI em Joinville – SC, e aplico meus conhecimentos nas
-            áreas de <strong>TI, programação, design</strong> e{" "}
-            <strong>automação</strong>, tanto de forma autônoma quanto no meu
-            dia a dia profissional.
+            áreas de <strong>TI, programação, design, automação</strong> e{" "}
+            <strong>análise de dados</strong>, tanto de forma autônoma quanto no
+            meu dia a dia profissional.
           </p>
 
           <p>

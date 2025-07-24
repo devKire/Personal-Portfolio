@@ -81,7 +81,7 @@ export default function ProjectsSection() {
         "O LowAnx é uma iniciativa dedicada a fornecer apoio e informações valiosas para aqueles que enfrentam desafios relacionados à ansiedade.",
       temp: "Projetos Recentes",
       development: "Em desenvolvimento",
-      link: "https://lowanx.com.br",
+      link: "https://low-anx-erikrafaelsantos2006gmailcoms-projects.vercel.app/",
       specs: [
         { label: "Language", value: "TypeScript", icon: "/typescript.svg" },
         { label: "Library", value: "React", icon: "/react.svg" },

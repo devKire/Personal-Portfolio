@@ -25,7 +25,7 @@ const SkillsSection: FC = () => {
       { name: "TypeScript", icon: "/typescript.svg" },
       { name: "C#", icon: "/csharp.svg" },
       { name: "Python", icon: "/python.svg" },
-      { name: "Portugol", icon: "/portugol.svg" },
+      { name: "Portugol", icon: "/portugol.png" },
     ],
     frameworks: [
       { name: "React", icon: "/react.svg" },
